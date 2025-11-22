@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin Dashboard"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#FF6200EE"
+        android:layout_marginBottom="40dp" />
+
+    <Button
+        android:id="@+id/addProductBtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Manage Products"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_background"
+        android:layout_marginBottom="15dp" />
+
+    <Button
+        android:id="@+id/manageUsersBtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Manage Users"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_background"
+        android:layout_marginBottom="30dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Logout"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:background="#FFFF6B6B" />
+
+</LinearLayout>

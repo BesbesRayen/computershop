@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">TIJARA - Computer Shop</string>
+    
+    <string-array name="countries">
+        <item>Tunisia</item>
+        <item>Algeria</item>
+        <item>Morocco</item>
+        <item>Libya</item>
+        <item>Egypt</item>
+        <item>Sudan</item>
+        <item>Saudi Arabia</item>
+        <item>United Arab Emirates</item>
+        <item>Kuwait</item>
+        <item>Qatar</item>
+        <item>Bahrain</item>
+        <item>Oman</item>
+        <item>Jordan</item>
+        <item>Lebanon</item>
+        <item>Syria</item>
+        <item>Iraq</item>
+        <item>Palestine</item>
+        <item>Israel</item>
+        <item>Yemen</item>
+        <item>France</item>
+        <item>Germany</item>
+        <item>Spain</item>
+        <item>Italy</item>
+        <item>United Kingdom</item>
+        <item>Other</item>
+    </string-array>
+    
+    <string-array name="packaging_options">
+        <item>Standard</item>
+        <item>Gift Wrap</item>
+        <item>Express</item>
+        <item>Fragile</item>
+    </string-array>
+</resources>

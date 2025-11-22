@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "966982399806",
+    "project_id": "computershopapp-20109",
+    "storage_bucket": "computershopapp-20109.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966982399806:android:ae1067716821791f8d5e6f",
+        "android_client_info": {
+          "package_name": "com.example.computershop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2cp7XBHbUdGks6S_Vepm5BnSCDIo-CbQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "cert_hash": ""
+        },
+        "firebase_database": {
+          "url": "https://computershopapp-20109.firebaseio.com"
+        },
+        "analytics_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
