@@ -77,19 +77,49 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void navigateToHome(String userId) {
+        FirebaseUser currentUser = FirebaseManager.getCurrentUser();
+        if (currentUser == null) {
+            startActivity(new Intent(LoginActivity.this, ProductListActivity.class));
+            finish();
+            return;
+        }
+
+        String userEmail = currentUser.getEmail();
+
+        // Check if admin email first
+        if (isAdminEmail(userEmail)) {
+            Toast.makeText(LoginActivity.this, "Welcome Admin!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(LoginActivity.this, AdminPageActivity.class));
+            finish();
+            return;
+        }
+
+        // For regular users, check role from Firestore
         FirebaseManager.getUserFromFirestore(userId, task -> {
             if (task.isSuccessful()) {
                 DocumentSnapshot document = task.getResult();
                 if (document.exists()) {
                     String role = document.getString("role");
                     if ("admin".equals(role)) {
-                        startActivity(new Intent(LoginActivity.this, AdminDashboardActivity.class));
+                        Toast.makeText(LoginActivity.this, "Welcome Admin!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(LoginActivity.this, AdminPageActivity.class));
                     } else {
                         startActivity(new Intent(LoginActivity.this, ProductListActivity.class));
                     }
-                    finish();
+                } else {
+                    // If user not found in Firestore, go to product list
+                    startActivity(new Intent(LoginActivity.this, ProductListActivity.class));
                 }
+            } else {
+                // If error fetching user data, go to product list
+                startActivity(new Intent(LoginActivity.this, ProductListActivity.class));
             }
+            finish();
         });
+    }
+
+    private boolean isAdminEmail(String email) {
+        if (email == null) return false;
+        return "admin@gmail.com".equals(email.toLowerCase());
     }
 }

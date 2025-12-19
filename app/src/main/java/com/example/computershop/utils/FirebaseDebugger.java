@@ -9,7 +9,7 @@ public class FirebaseDebugger {
         try {
             Log.d(TAG, "=== Firebase Configuration Check ===");
             
-            // Check if FirebaseAuth is available
+
             try {
                 com.google.firebase.auth.FirebaseAuth auth = FirebaseManager.getAuth();
                 if (auth != null) {

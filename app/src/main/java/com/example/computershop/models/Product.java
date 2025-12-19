@@ -11,10 +11,14 @@ public class Product implements Serializable {
     private int stock;
     private String imageUrl;
 
+    // No-argument constructor required by Firebase Firestore deserialization
     public Product() {
     }
 
-    public Product(String idArt, String libArt, double prixArt, String catArt, 
+    public Product(String idArt, String name, double price, String category, String description, int stock, int selectedImageResId) {
+    }
+
+    public Product(String idArt, String libArt, double prixArt, String catArt,
                    String description, int stock, String imageUrl) {
         this.idArt = idArt;
         this.libArt = libArt;

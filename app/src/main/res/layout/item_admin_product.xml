@@ -1,81 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="8dp">
+    app:cardElevation="6dp"
+    app:cardCornerRadius="12dp"
+    app:strokeColor="#E0E0E0"
+    app:strokeWidth="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/productName"
+        <!-- Product Header -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Product Name"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_marginBottom="5dp" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
 
-        <TextView
-            android:id="@+id/productPrice"
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Product Name"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/productStock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 in stock"
+                android:textSize="12sp"
+                android:textColor="#4CAF50"
+                android:background="#E8F5E8"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+
+        <!-- Product Details -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Price"
-            android:textSize="14sp"
-            android:textColor="#FF6200EE"
-            android:layout_marginBottom="5dp" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
 
+            <TextView
+                android:id="@+id/productPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="$99.99"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1976D2" />
+
+            <TextView
+                android:id="@+id/productCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Electronics"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:background="#F5F5F5"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+
+        <!-- Product Image (NEW) -->
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Product image"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"
+            app:cornerRadius="8dp" />
+
+        <!-- Description -->
         <TextView
-            android:id="@+id/productStock"
+            android:id="@+id/productDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Stock"
+            android:text="Product description goes here with some details about the product features and specifications."
             android:textSize="12sp"
             android:textColor="#666666"
-            android:layout_marginBottom="5dp" />
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:id="@+id/productCategory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Category"
-            android:textSize="12sp"
-            android:textColor="#666666"
-            android:layout_marginBottom="10dp" />
-
+        <!-- Action Buttons -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/editBtn"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:layout_weight="1"
-                android:text="Edit"
-                android:background="@drawable/button_background"
+                android:text="✏️ Edit"
+                android:textSize="12sp"
                 android:textColor="@android:color/white"
-                android:layout_marginEnd="8dp" />
+                app:backgroundTint="#1976D2"
+                app:cornerRadius="18dp"
+                android:layout_marginEnd="6dp"
+                android:elevation="2dp" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/deleteBtn"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:layout_weight="1"
-                android:text="Delete"
-                android:background="#FFFF6B6B"
-                android:textColor="@android:color/white" />
+                android:text="🗑️ Delete"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"
+                app:backgroundTint="#D32F2F"
+                app:cornerRadius="18dp"
+                android:layout_marginStart="6dp"
+                android:elevation="2dp" />
+
         </LinearLayout>
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
